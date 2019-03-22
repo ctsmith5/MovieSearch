@@ -70,10 +70,11 @@ class MovieController {
     static func fetchImage(urlString: String, completion: @escaping (UIImage?) -> Void) {
         
         //1) Make the url
+        let imageURL = URL(string: "https://image.tmdb.org/t/p/w500")
+        guard let imagePath = imageURL?.appendingPathComponent(urlString) else {return}
         
-        guard let url = URL(string: urlString) else { completion(nil) ; return }
         //2) Make the DataTask
-        URLSession.shared.dataTask(with: url) { (data, _, error) in
+        URLSession.shared.dataTask(with: imagePath) { (data, _, error) in
             if let error = error {
                 print(" \(error.localizedDescription) \(error) in function \(#function) ")
                 completion(nil)

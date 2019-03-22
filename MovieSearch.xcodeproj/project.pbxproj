@@ -92,6 +92,7 @@
 		AFDCB4EE224532FC00D4E0F8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AFDCB4F62245515A00D4E0F8 /* MovieTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -99,7 +100,6 @@
 		AFDCB4EF2245331800D4E0F8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AFDCB4F62245515A00D4E0F8 /* MovieTableViewCell.swift */,
 				AFDCB4EA224532C700D4E0F8 /* MovieTableViewController.swift */,
 			);
 			path = ViewController;

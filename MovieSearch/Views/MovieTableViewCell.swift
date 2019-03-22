@@ -13,7 +13,7 @@ class MovieTableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var ratingLabel: UILabel!
-    @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UITextView!
     @IBOutlet weak var movieImageView: UIImageView!
     
     
@@ -30,7 +30,7 @@ class MovieTableViewCell: UITableViewCell {
         
         guard let movie = movie else {return}
         titleLabel.text = movie.title
-        ratingLabel.text = movie.voteAverage
+        ratingLabel.text = "Rating\(movie.voteAverage)"
         overviewLabel.text = movie.overview
     }
     

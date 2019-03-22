@@ -10,19 +10,12 @@ import UIKit
 
 class MovieTableViewController: UITableViewController {
 
-    
-    
     @IBOutlet weak var searchBar: UISearchBar!
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         searchBar.delegate = self
-        
     }
-    
-    
     
     // MARK: - Table view data source
 
@@ -36,27 +29,20 @@ class MovieTableViewController: UITableViewController {
         return MovieController.sharedInstance.movies.count
     }
 
-    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "movieCell", for: indexPath) as? MovieTableViewCell else {return UITableViewCell()}
         
         let movie = MovieController.sharedInstance.movies[indexPath.row]
-        cell?.movie = movie
-        return cell ?? UITableViewCell()
+        cell.movie = movie
+        return cell
     }
-   
-
 } // End of Class
 
 extension MovieTableViewController: UISearchBarDelegate {
-    
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
         guard let searchText = searchBar.text,
             !searchText.isEmpty else {return}
-        
         MovieController.sharedInstance.getMovies(searchTerm: searchText) { (fetchedMovies) in
-          
             MovieController.sharedInstance.movies = fetchedMovies
             DispatchQueue.main.async {
                 self.tableView.reloadData()
