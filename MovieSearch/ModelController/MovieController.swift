@@ -26,7 +26,7 @@ class MovieController {
         guard let url = baseURL else {completion(movies) ; return }
     
         let apiQuery = URLQueryItem(name: "api_key", value: "6e6b1cb140fbaee2fe4a98f1ec253860")
-        let movieQuery = URLQueryItem(name: "query", value: "Captain+Marvel")
+        let movieQuery = URLQueryItem(name: "query", value: searchTerm)
         var urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
         
         urlComponents?.queryItems = [apiQuery,movieQuery]

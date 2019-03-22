@@ -23,3 +23,9 @@ struct Movie: Codable {
         case imagePath = "poster_path"
     }
 }
+
+
+struct TopLevelDictionary: Codable {
+    let results: [Movie]
+    
+}

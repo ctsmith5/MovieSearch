@@ -44,11 +44,6 @@
 		AFDCB4CC2245328700D4E0F8 = {
 			isa = PBXGroup;
 			children = (
-				AFDCB4F62245515A00D4E0F8 /* MovieTableViewCell.swift */,
-				AFDCB4EF2245331800D4E0F8 /* ViewController */,
-				AFDCB4EE224532FC00D4E0F8 /* Views */,
-				AFDCB4ED224532FA00D4E0F8 /* ModelController */,
-				AFDCB4EC224532F800D4E0F8 /* Model */,
 				AFDCB4D72245328700D4E0F8 /* MovieSearch */,
 				AFDCB4D62245328700D4E0F8 /* Products */,
 			);
@@ -65,6 +60,10 @@
 		AFDCB4D72245328700D4E0F8 /* MovieSearch */ = {
 			isa = PBXGroup;
 			children = (
+				AFDCB4EC224532F800D4E0F8 /* Model */,
+				AFDCB4ED224532FA00D4E0F8 /* ModelController */,
+				AFDCB4EE224532FC00D4E0F8 /* Views */,
+				AFDCB4EF2245331800D4E0F8 /* ViewController */,
 				AFDCB4D82245328700D4E0F8 /* AppDelegate.swift */,
 				AFDCB4DC2245328700D4E0F8 /* Main.storyboard */,
 				AFDCB4DF2245328800D4E0F8 /* Assets.xcassets */,
@@ -100,6 +99,7 @@
 		AFDCB4EF2245331800D4E0F8 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				AFDCB4F62245515A00D4E0F8 /* MovieTableViewCell.swift */,
 				AFDCB4EA224532C700D4E0F8 /* MovieTableViewController.swift */,
 			);
 			path = ViewController;
