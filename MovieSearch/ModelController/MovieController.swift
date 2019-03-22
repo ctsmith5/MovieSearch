@@ -52,10 +52,9 @@ class MovieController {
             
             
             do {
-                let rootDictionary = try JSONDecoder().decode([String: Movie].self, from: data)
-                let fetchedMovies = rootDictionary.compactMap { $0.value }
-                self.movies = fetchedMovies
-                completion(fetchedMovies)
+                let rootDictionary = try JSONDecoder().decode(TopLevelDictionary.self, from: data)
+                
+                completion(rootDictionary.results)
                 
             }catch{
                 print("could not load from dictionary \(error.localizedDescription)")
