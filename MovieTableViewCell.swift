@@ -10,11 +10,38 @@ import UIKit
 
 class MovieTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var movieImageView: UIImageView!
+    
+    
+    var movie: Movie? {
+        didSet{
+            updateViews()
+            fetchAndUpdateImageView()
+        }
     }
 
+    
+    
+    func updateViews(){
+        
+        guard let movie = movie else {return}
+        titleLabel.text = movie.title
+        ratingLabel.text = movie.voteAverage
+        overviewLabel.text = movie.overview
+    }
+    
+    func fetchAndUpdateImageView() {
+        guard let imagePath = movie?.imagePath else {return}
+        MovieController.fetchImage(urlString: imagePath) { (image) in
+            DispatchQueue.main.async {
+                self.movieImageView.image = image
+            }
+        }
+    }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
